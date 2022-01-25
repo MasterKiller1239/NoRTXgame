@@ -1,0 +1,75 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "Xbox",
+            "id": "92e89ff3-3fbd-46a3-987a-92fbfd16025f",
+            "actions": [
+                {
+                    "name": "X",
+                    "type": "Button",
+                    "id": "6d97a11f-5d75-4550-a695-e5ced675c49f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "A",
+                    "type": "Button",
+                    "id": "91d25d1e-126f-4b46-90bc-0b72c155c275",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "87533f3f-91eb-4d79-bf5e-8fea3891804d",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "XboxScheme",
+                    "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3afbac09-5979-4f92-99df-d0ce68c1c94b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XboxScheme",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eab5e355-de4f-4ce1-99c2-76278d4ca77e",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "XboxScheme",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "XboxScheme",
+            "bindingGroup": "XboxScheme",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
