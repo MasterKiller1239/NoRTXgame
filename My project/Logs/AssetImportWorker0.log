@@ -331,3 +331,91 @@ System memory in use after: 70.9 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1898.
 Total: 3.868600 ms (FindLiveObjects: 0.459500 ms CreateObjectMapping: 0.139500 ms MarkObjects: 2.975200 ms  DeleteObjects: 0.291900 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000901 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.290 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1410 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.8 MB.
+System memory in use after: 70.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1901.
+Total: 2.244900 ms (FindLiveObjects: 0.264100 ms CreateObjectMapping: 0.063300 ms MarkObjects: 1.855000 ms  DeleteObjects: 0.060700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1065.275378 seconds.
+  path: Assets/PadScripts/I'm in danger Sound Effect.mp3
+  artifactKey: Guid(96ac39fcb5939384c9a730abeae2de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PadScripts/I'm in danger Sound Effect.mp3 using Guid(96ac39fcb5939384c9a730abeae2de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77127facc556d6918abfb6831ce5b3f3') in 0.085999 seconds
+  Import took 0.090779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002913 seconds.
+  path: Assets/PadScripts/I'm in danger Sound Effect.mp3
+  artifactKey: Guid(96ac39fcb5939384c9a730abeae2de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PadScripts/I'm in danger Sound Effect.mp3 using Guid(96ac39fcb5939384c9a730abeae2de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77127facc556d6918abfb6831ce5b3f3') in 0.018560 seconds
+  Import took 0.024310 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002697 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.638 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1410 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.8 MB.
+System memory in use after: 70.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1905.
+Total: 3.033500 ms (FindLiveObjects: 0.183800 ms CreateObjectMapping: 0.063000 ms MarkObjects: 2.720000 ms  DeleteObjects: 0.065000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001986 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1410 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.8 MB.
+System memory in use after: 70.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1908.
+Total: 3.333800 ms (FindLiveObjects: 0.278900 ms CreateObjectMapping: 0.106300 ms MarkObjects: 2.878800 ms  DeleteObjects: 0.067800 ms)
+
