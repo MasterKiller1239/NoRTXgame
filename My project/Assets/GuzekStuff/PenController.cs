@@ -65,7 +65,7 @@ public class PenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pen.current != null && Pen.current.pressure.ReadValue() > PenPressure && !IsChecking && !GotInput && PadController.Instance.Attacked)
+        if (Pen.current != null && Pen.current.pressure.ReadValue() > PenPressure && !IsChecking && !GotInput && EnemyController.Instance.Attacked)
         {
             _swipeCheck = SwipeCheck();
             StartCoroutine(_swipeCheck);
