@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -472,11 +472,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 5
-  Attack: {fileID: 8300000, guid: 96ac39fcb5939384c9a730abeae2de3a, type: 3}
-  Defend: {fileID: 8300000, guid: 133d847a99eaa6a428aeb2f8452b45fd, type: 3}
+  EnemyDefend: {fileID: 8300000, guid: 96ac39fcb5939384c9a730abeae2de3a, type: 3}
+  EnemyAttack: {fileID: 8300000, guid: ee8d36acfdbfbfe4496194b49e34358c, type: 3}
+  EnemyHit: {fileID: 8300000, guid: a4135fdbeb9fa33499ecf484d4d34ff5, type: 3}
+  PlayerHit: {fileID: 8300000, guid: 133d847a99eaa6a428aeb2f8452b45fd, type: 3}
+  PlayerFailed: {fileID: 8300000, guid: 985f97a3f48a1b946b12e4c519201c38, type: 3}
+  PlayerWon: {fileID: 8300000, guid: d4a9fc90ea399854b8a28507bd3c164f, type: 3}
   Leftside: {fileID: 759685058}
   Rightside: {fileID: 464839569}
   source: {fileID: 792882595}
+  Attacks: 
+  AttackCount: 10
+  MaxOffenseInRow: 3
+  period: 0
+  i: 0
+  EnemyLogicCooldown: 5
+  Attacked: 0
+  GenerateInitialAttacks: 1
 --- !u!1001 &1696087260
 PrefabInstance:
   m_ObjectHideFlags: 0
