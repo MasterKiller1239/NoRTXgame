@@ -25,7 +25,8 @@ public class PadController : MonoBehaviour
             {
                 Debug.Log("Punch");
                 isShowed = true;
-                currentpos = Random.Range(0, 1);
+                currentpos = Random.Range(0, 100)%2;
+                Debug.Log(currentpos);
             }
 
             if (Gamepad.current.xButton.IsPressed())
