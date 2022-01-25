@@ -17,6 +17,10 @@ public class EnemyController : MonoBehaviour
     public AudioClip EnemyHit;
     public AudioClip PlayerHit;
 
+    [Header("Entity miss sounds")]
+    public AudioClip EnemyMiss;
+    public AudioClip PlayerMiss;
+
     [Header("Endgame sounds")]
     public AudioClip PlayerFailed;
     public AudioClip PlayerWon;
@@ -97,7 +101,8 @@ public class EnemyController : MonoBehaviour
                     }
                     else
                     {
-                        // Missed
+                        // Player missed the enemy
+                        PlaySound(currentpos, SoundType.PlayerMiss);
                         period = 0;
                     }
                 }
@@ -182,6 +187,14 @@ public class EnemyController : MonoBehaviour
                 source.clip = PlayerFailed;
                 break;
 
+            case SoundType.EnemyMiss:
+
+                break;
+
+            case SoundType.PlayerMiss:
+
+                break;
+
             default:
 
                 break;
@@ -217,5 +230,5 @@ public class EnemyController : MonoBehaviour
 
 public enum SoundType
 {
-    EnemyDefend, EnemyHit, EnemyAttack, PlayerHit, PlayerFailed, PlayerWon
+    EnemyDefend, EnemyHit, EnemyAttack, PlayerHit, PlayerFailed, PlayerWon, PlayerMiss, EnemyMiss
 }
