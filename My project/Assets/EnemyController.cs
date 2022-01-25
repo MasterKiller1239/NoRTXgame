@@ -6,7 +6,10 @@ public class EnemyController : MonoBehaviour
 {
     public static EnemyController Instance;
 
-    public int Health = 5;
+    public int PlayerHealth = 3;
+    public int PlayerMaxHealth = 3;
+    public int EnemyHealth = 5;
+    public int EnemyMaxHealth = 5;
 
     // EnemyDefend, EnemyHit, EnemyAttack, PlayerHit, PlayerFailed, PlayerWon
     [Header("Attack type sounds")]
@@ -36,7 +39,6 @@ public class EnemyController : MonoBehaviour
 
     public float period = 0.0f;
     int currentpos = 1;
-    public int i = 5;
     public float EnemyLogicCooldown = 5.0f;
     public bool Attacked = false;
     public bool GenerateInitialAttacks = true;
@@ -56,7 +58,6 @@ public class EnemyController : MonoBehaviour
     {
         for (; ; )
         {
-            Debug.Log("Waiting for attack");
             yield return new WaitForSecondsRealtime(EnemyLogicCooldown);
 
             if (Attacks.Count <= 0)
@@ -67,7 +68,7 @@ public class EnemyController : MonoBehaviour
 
             currentpos = Random.Range(0, 2);
 
-            Debug.Log($"Type {(moveType == 0 ? "Defend from player" : "Attack player")}, currentPos: {currentpos}");
+            //Debug.Log($"Type {(moveType == 0 ? "Defend from player" : "Attack player")}, currentPos: {currentpos}");
             Attacked = true;
 
             // Defend from player
@@ -89,19 +90,18 @@ public class EnemyController : MonoBehaviour
                 {
                     if (currentpos == 0 && PenController.Instance.SwipedLeft)
                     {
-                        i--;
+                        --EnemyHealth;
                         period = 0;
                         PlaySound(currentpos, SoundType.EnemyHit);
                     }
                     else if (currentpos == 1 && PenController.Instance.SwipedRight)
                     {
-                        i--;
+                        --EnemyHealth;
                         period = 0;
                         PlaySound(currentpos, SoundType.EnemyHit);
                     }
                     else
                     {
-                        // Player missed the enemy
                         PlaySound(currentpos, SoundType.PlayerMiss);
                         period = 0;
                     }
@@ -111,42 +111,58 @@ public class EnemyController : MonoBehaviour
                 {
                     if (currentpos == 0 && PadController.Instance.XPressed)
                     {
+
                         period = 0;
-                        //PlaySound(currentpos, 1);
+                        PlaySound(currentpos, SoundType.EnemyMiss);
                     }
                     else if (currentpos == 1 && PadController.Instance.BPressed)
                     {
                         period = 0;
-                        //PlaySound(currentpos, 1);
+                        PlaySound(currentpos, SoundType.EnemyMiss);
                     }
                     else
                     {
+                        --PlayerHealth;
                         period = 0;
                         PlaySound(currentpos, SoundType.PlayerHit);
                     }
                 }
-
-                
-                //else
-                //{
-                //    Debug.Log("Wrong input");
-                //    Debug.Log("Miss");
-                //    period = 0;
-                //}
             }
             else
             {
                 if (moveType == 0)
-                    Debug.Log("Miss");
+                    PlaySound(currentpos, SoundType.PlayerMiss);
                 else
                     PlaySound(currentpos, SoundType.PlayerHit);
                 period = 0;
+            }           
+
+            if (PlayerHealth <= 0)
+            {
+                yield return new WaitForSecondsRealtime(2.0f);
+                PlaySound(currentpos, SoundType.PlayerFailed);
+                PlayerHealth = PlayerMaxHealth;
+                EnemyHealth = EnemyMaxHealth;
+                yield return new WaitForSecondsRealtime(EnemyLogicCooldown);
+                Attacks.Clear();
+
+            }
+
+            if (EnemyHealth <= 0)
+            {
+                EnemyHealth = EnemyMaxHealth;
+                PlayerHealth = PlayerMaxHealth;
+                yield return new WaitForSecondsRealtime(2.0f);
+                PlaySound(currentpos, SoundType.PlayerWon);
+                yield return new WaitForSecondsRealtime(2.0f);
+                Attacks.Clear();
             }
 
             Attacked = false;
 
             PadController.Instance.ResetPadInput();
             PenController.Instance.ResetPenInput();
+
         }
     }
 
@@ -188,11 +204,11 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case SoundType.EnemyMiss:
-
+                source.clip = EnemyMiss;
                 break;
 
             case SoundType.PlayerMiss:
-
+                source.clip = PlayerMiss;
                 break;
 
             default:
