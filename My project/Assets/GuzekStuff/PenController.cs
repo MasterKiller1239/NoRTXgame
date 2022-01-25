@@ -7,6 +7,8 @@ public class PenController : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public static PenController Instance;
+
     public float PenMagnitude = 0.1f;
     public float PenPressure = 0.1f;
 
@@ -18,8 +20,15 @@ public class PenController : MonoBehaviour
 
     public bool IsChecking = false;
 
+    public bool SwipedLeft = false;
+    public bool SwipedRight = false;
+
+    public bool GotInput = false;
+
+
     void Start()
     {
+        Instance = this;
         width = Screen.width;
         height = Screen.height;
 
@@ -41,12 +50,13 @@ public class PenController : MonoBehaviour
 
         // From left to right
         if (side == false && side != side2)
-            Debug.Log("Swiped Right");
+            SwipedRight = true;
         else if (side == true && side != side2)
-            Debug.Log("Swiped Left");
+            SwipedLeft = true;
         else
             Debug.Log("No swipe");
 
+        GotInput = true;
         IsChecking = false;
         yield break;
     }
@@ -55,14 +65,13 @@ public class PenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pen.current != null && Pen.current.pressure.ReadValue() > PenPressure && !IsChecking)
+        if (Pen.current != null && Pen.current.pressure.ReadValue() > PenPressure && !IsChecking && !GotInput && PadController.Instance.Attacked)
         {
             _swipeCheck = SwipeCheck();
             StartCoroutine(_swipeCheck);
         }
             
     }
-
 
     /// <summary>
     /// Checks on which side of screen is pointer
@@ -75,6 +84,13 @@ public class PenController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    public void ResetPenInput()
+    {
+        SwipedLeft = false;
+        SwipedRight = false;
+        GotInput = false;
     }
 
 }
