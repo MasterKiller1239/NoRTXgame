@@ -23,13 +23,13 @@ public class PadController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Gamepad.current.xButton.IsPressed() && !GotInput && EnemyController.Instance.Attacked)
+        if (Gamepad.current != null && Gamepad.current.xButton.IsPressed() && !GotInput && EnemyController.Instance.Attacked)
         {
             XPressed = true;
             GotInput = true;
         }           
 
-        if (Gamepad.current.bButton.IsPressed() && !GotInput && EnemyController.Instance.Attacked)
+        if (Gamepad.current != null &&  Gamepad.current.bButton.IsPressed() && !GotInput && EnemyController.Instance.Attacked)
         {
             BPressed = true;
             GotInput = true;
